@@ -1,0 +1,16 @@
+{
+    "presets": [
+        "react"
+    ],
+    "plugins": [
+        "syntax-dynamic-import",
+        [{
+            "libraryName": "antd",
+            "libraryDirectory": "src",
+            "style": "css" 
+          }],
+        ["import-inspector", {
+          "serverSideRequirePath": true
+        }]
+    ]
+}
