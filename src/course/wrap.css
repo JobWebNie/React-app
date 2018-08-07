@@ -1,0 +1,44 @@
+.avatar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width:40px;
+    height:40px;
+    border:1px solid white;
+    border-radius: 50%;
+}
+.product-info{
+    /* position: absolute; */
+    /* bottom: 0px; */
+    
+}
+.product-title{
+    display: block;
+    font-size: 14px;
+    color: #333;
+    font-family: "microsoft yahei";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.page-raw{
+    position: absolute;
+    bottom: 25px;
+    text-align: center;
+    width: 100%;
+}
+.page-pot{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+    border-radius: 10px;
+    background: white;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out;
+}
+.pot-actived{
+    width: 12px;
+    background-color: rgb(97, 218, 251);
+}
