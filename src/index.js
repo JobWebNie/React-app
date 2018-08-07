@@ -3,15 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
-import Docs from './Docs';
+import Docs from './Docs'; 
+import Tour from './Tour';
 import Slider from './Slider';
 import './index.css'
 
-const Tutorial = ({ match }) => (
-  <div>
-    <h3>Tutorial</h3>
-  </div>
-)
 
 const Blog = ({ match }) => (
   <div>
@@ -51,7 +47,7 @@ const BasicExample = () => (
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/docs" component={Docs}/>
-          <Route path="/tutorial" component={Tutorial}/>
+          <Route path="/tutorial" component={Tour}/>
           <Route path="/blog" component={Blog}/>
           <Route component={NoMatch}/>
         </Switch>
