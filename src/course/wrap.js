@@ -24,12 +24,15 @@ class NssWrap extends Component{
     }
     render(){
         const {actived, children} = this.state.prodList;
-        const item = children[actived]
-        const pages = children.map((item,index)=>{
+        const item = children[actived];
+        const pages = [];
+        children.forEach((item,index)=>{
             if(index === actived){
-                <span className="page-pot pot-actived"></span>
+                pages.push(<span key={index} className="page-pot pot-actived"></span>)
+            }else{
+                pages.push(<span key={index} className="page-pot"></span>)
             }
-            <span className="page-pot"></span>
+            
         })
         return(
             <Fragment>

@@ -1,16 +1,8 @@
 import React,{ Component, Fragment} from 'react';
-import  Axios  from 'axios';
 import {Table,Select,Pagination} from 'antd';
+import {getData} from '../api/fetch';
 const {Option} = Select;
-function getData(url,params){
-    return new Promise((resolve,reject)=>{
-        Axios.get(url,params).then((response)=>{
-            resolve(response.data)
-        }).catch((err=>{
-            reject(err)
-        }))
-    })
-}
+
 class NssAxios extends Component{
     constructor(props){
         super(props);

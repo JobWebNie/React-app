@@ -72,7 +72,7 @@
         line-height: 45px;
     }
    .article{
-        width:auto;
+        width:100%;
    }
 }
 @media (min-width:375px) and (max-width: 778.98px){

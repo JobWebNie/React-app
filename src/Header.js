@@ -13,7 +13,7 @@ class Header extends Component{
                         <nav className="navBar">
                         <NavLink activeClassName="selected" className="list-item" to="/docs">Docs</NavLink>
                         <NavLink activeClassName="selected" className="list-item" to="/tutorial">Tutorial</NavLink>
-                        <NavLink activeClassName="selected" className="list-item" to="/blog">Blog</NavLink>
+                        <NavLink activeClassName="selected" className="list-item" to="/edite">Edite</NavLink>
                         </nav>
                         <form className="header-form" action="">
                         <span className="form-item" style = {{position: 'relative',display: 'inline-block',direction: 'ltr'}}>

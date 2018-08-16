@@ -1,0 +1,85 @@
+.login-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.login-form{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.login-info{
+    width: 100%;
+    padding: 20px;
+}
+
+.info-title{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.title-link{
+    position: relative;
+    font-weight: 700;
+    font-size: 36px;
+}
+.title-link::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    height: 2px;
+    background-color: #61dafb;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform .2s ease-out,
+}
+.title-link:hover.title-link::before{
+    transform: scaleX(1);
+}
+
+.info-body{
+    display: flex;
+    justify-content: center;
+}
+.info-body-inner{
+    flex-basis: 87.5%;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.form-group > input{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #cdf3fd;
+    outline: none;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-group > input:focus{
+    box-shadow: none;
+    border-color: #e6f5f9;
+    background-color: #e6f5f9;
+}
+.form-group > button{
+    padding:10px 20px;
+    background-color: #61dafb;
+    color: #fff;
+    border-radius: 4px;
+    border: 0 solid transparent;
+    width: 100%;
+}
+
+@media (min-width:779px){
+    .info-body-inner{
+        flex-basis: 46.2%;
+    }
+}

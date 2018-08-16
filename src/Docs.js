@@ -17,7 +17,7 @@ import AntCard from './page/card';
 import AntCarousel from './page/carousel';
 import AntOtherMore from './page/other';
 import AntBackTop from './page/backtop';
-
+import Slider from './Slider';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import 'antd/dist/antd.css'
 
@@ -33,6 +33,8 @@ class Docs extends Component {
       }
       render() {
         return (
+          <Fragment>
+          <Slider />
           <div className="article">
             <LocaleProvider locale={zhCN}>
               <Fragment>
@@ -56,6 +58,7 @@ class Docs extends Component {
               </Fragment>
             </LocaleProvider>
           </div>
+          </Fragment>
         );
       }
 }
