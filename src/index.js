@@ -41,7 +41,7 @@ class BasicExample extends Component{
         <div className="body">
           <Switch>
             <Route exact path="/" component={Home}/>
-    <Route path="/login"  render={({ match })=>(<Login doLogin={this.doLogin(match)}/>)}/>
+            <Route path="/login"  component={Login}/>
             <Route path="/docs" component={Docs}/>
             <Route path="/tutorial" component={Tour}/>
             <Route path="/edite" component={Edite}/>
