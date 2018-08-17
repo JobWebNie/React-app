@@ -1,141 +1,63 @@
 import React,{ Component } from  'react';
-import {getData} from './api/fetch';
 import './Slider.css'
 
-function setSection(props,index){
-    if(!props){
-        return;
+class Section extends Component{
+    render(){
+        const {title,activePath,items} = this.props.sectionItem;
+        return(
+            
+            <div className="section">
+                <button className="sectionTitle" >
+                    <div className="titleText">
+                        {title}
+                    </div>
+                </button>
+                <ul className="sectionBody">
+                    {items.map((item,index)=>{
+                       return <Items key={index} id={item.id} title={item.title} activePath={activePath} />
+                    })}
+                    
+                </ul>
+            </div>
+        )
     }
-    const {isActive,location,section} = props;
-    const {items,title} = section;
-    const {pathname} = location;
-    const pathItemId = pathname.lastIndexOf('/');  
-    const activePath = pathname.slice(pathItemId+1,-5)
-    let sectionItem = [];
-    items.forEach((item)=>{
-        if(item.id === activePath){
-            sectionItem.push(<li className="sectionItem" key={item.id}>
-            <a className="itemLink" href={item.id} style={{fontWeight: isActive ? 700 :'normal'}}>
-                {item.title}
-                <span  className="itemText"></span>
-            </a>
-        </li>);
-        }else{
-            sectionItem.push(<li className="sectionItem" key={item.id}>
-            <a className="itemLink" href={item.id}>
-                {item.title}
-            </a>
-        </li>);
-        }
-        
-    });
-    return(
-        <div className="section" key={index}>
-            <button className="sectionTitle" >
-                <div className="titleText">
-                    {title}
-                </div>
-            </button>
-            <ul className="sectionBody">
-                {sectionItem}
-            </ul>
-        </div>
-    )
 }
 
-function getSlider(value){
-    let slider = [];
-    const props = value;
-    props.forEach((item,index)=>{
-        let section = setSection(item,index)
-        slider.push(section)
-    })
-    return slider;
+class Items extends Component{
+    render(){
+        const {id,title,activePath} = this.props;
+        const isActive = (activePath===id) ? true : false;
+        return(
+            isActive?
+            <li className="sectionItem">
+                <a className="itemLink" href={id} style={{fontWeight: 700}}>
+                    {title}
+                    <span  className="itemText"></span>
+                </a>
+            </li>
+            :
+            <li className="sectionItem">
+                <a className="itemLink" href={id}>
+                    {title}
+                </a>
+            </li>
+        )
+    }
 }
 class Slider extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            loading:null,
-            children:[
-                // {
-                //     isActive:true,
-                //     location:{
-                //         pathname:"/docs/hello-world.html"
-                //     },
-                //     section:{
-                //         items:[
-                //             {
-                //                 id:"hello-world",
-                //                 title:"Hello World"
-                //             },
-                //             {
-                //                 id:"introducing-jsx",
-                //                 title:"Introducing JSX"
-                //             },
-                //             {
-                //                 id:"rendering-elements",
-                //                 title:"Rendering Elements"
-                //             }
-                //         ],
-                //         title:"Main Concepts",
-                //     }
-                // }   
-            ]
-            
-        }
-    }
-    componentDidMount(){
-        console.log(this)
-        getData('http://localhost:3001/course',{
-            params:{
-                pathName:'document',
-            }
-           
-        }).then((response)=>{
-            const items = response.data
-            this.setState({
-                loading:false,
-                children:items
-            })
-        })
-    }
     render(){
-        const data = this.props.sections;
         return (
             <div className="asider-container">
                 <div className="asider">
                     <nav className="asider-nav">
-                    {getSlider(data)}
-                        {/* <div className="section">
-                            <button className="sectionTitle">
-                                <div className="titleText">
-                                installAtion
-                                </div>
-                            </button>
-                            <ul className="sectionBody">
-                                <li className="sectionItem">
-                                    <a className="itemLink" href="#install-antd">
-                                    add antd to React
-                                    </a>
-                                </li><li className="sectionItem">
-                                    <a className="itemLink">
-                                    Create a New React App
-                                    </a>
-                                </li>
-                                <li className="sectionItem">
-                                    <a className="itemLink">
-                                    CDN links
-                                    </a>
-                                </li>
-                                <li className="sectionItem">
-                                    <a className="itemLink" style={{fontWeight: 700}}>
-                                    Getting Start
-                                    <span className="itemText"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div> */}
+                    {
+                         this.props.sections.map((section,index)=>{
+                             if(index===0){
+                                section.activePath = section.items[index].id
+                             }
+                             return  <Section  key={index} sectionItem={section}/>
+                    })
+                    }
                     </nav>
                 </div>
             </div>

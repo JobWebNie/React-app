@@ -1,4 +1,4 @@
-import React,{Component,Fragment} from 'react';
+import React,{Component} from 'react';
 import { NavLink} from 'react-router-dom'
 import {Breadcrumb} from 'antd';
 
@@ -50,7 +50,7 @@ class AntBreadcrumb extends Component{
       
     render(){
         return(
-            <Fragment>
+            <div id="antd-breadcrumb">
                 <header className="articleheader">
                      <h2>Breadcrumb 面包屑</h2>
                  </header>
@@ -58,7 +58,7 @@ class AntBreadcrumb extends Component{
                     <p>可以使用 itemRender 方法 将routers 传入</p>
                      <Breadcrumb itemRender={this.itemRender} routes={this.state.routes}/>
                 </div>   
-            </Fragment>
+            </div>
         )
     }
 }
