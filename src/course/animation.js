@@ -46,7 +46,7 @@ class NssAnimation extends Component{
         return(
             <Fragment>
                 <header className="articleheader">
-                    <h2 className="headerName">
+                    <h2>
                         常用小动画
                     </h2>
                 </header>

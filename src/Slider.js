@@ -101,7 +101,7 @@ class Slider extends Component{
         })
     }
     render(){
-        const data = this.state.children;
+        const data = this.props.sections;
         return (
             <div className="asider-container">
                 <div className="asider">
