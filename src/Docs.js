@@ -34,7 +34,7 @@ class Docs extends Component {
       render() {
         return (
           <Fragment>
-          <Slider />
+          <Slider path="docs"/>
           <div className="article">
             <LocaleProvider locale={zhCN}>
               <Fragment>

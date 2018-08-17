@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import {Icon} from 'antd';
+import avatarPhoto from './avatar.jpg'
 import './Info.css';
 
 
@@ -11,7 +12,7 @@ class Info extends Component{
                     <div className="resume-left">
                         <div className="left-avatar">
                             <a href="" className="left-avatar-box">
-                                <img src="http://static.500d.me/resources/500d/editresume/images/default_head.png" alt=""/>
+                                <img src={avatarPhoto} alt=""/>
                             </a>
                             
                         </div>

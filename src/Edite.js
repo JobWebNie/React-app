@@ -8,7 +8,7 @@ class Edite extends Component {
     render() {
         return(
             <Fragment>
-                <Slider/>
+                <Slider path="edis"/>
                 <div className="article">
                     <NssPost></NssPost>
                     <NssEditeSlider></NssEditeSlider>

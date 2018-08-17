@@ -10,7 +10,7 @@ class Tour extends Component {
     render() {
         return(
             <Fragment>
-                <Slider/>
+                <Slider path="tours"/>
                 <div className="article">
                     <NssAxios></NssAxios>
                     <NssWrap></NssWrap>
